@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: cargo build --verbose --release && chmod +x target/release/flickerfix
+      run: sudo apt install libdbus-1-dev pkg-config && cargo build --verbose --release && chmod +x target/release/flickerfix
     - name: Update release
       uses: pyTooling/Actions/releaser@r0
       with:
